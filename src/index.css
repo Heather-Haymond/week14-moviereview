@@ -1,13 +1,121 @@
-body {
+/* Reset default styles */
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+}
+
+/* Set base font size and line height */
+html {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Set default font family and text color */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  color: #333;
+}
+
+/* Set max width and center content */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Add hover effect to links */
+a:hover {
+  text-decoration: underline;
+}
+
+/* Style headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  margin: 20px 0 10px;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+/* Style paragraphs */
+p {
+  margin: 0 0 20px;
+}
+
+/* Style lists */
+ul, ol {
+  margin: 0 0 20px;
+  padding: 0 0 0 20px;
+}
+
+li {
+  margin: 0 0 10px;
+}
+
+/* Style code blocks */
+pre {
+  font-family: 'Source Code Pro', Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin: 0 0 20px;
+  padding: 20px;
+  overflow-x: auto;
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: 'Source Code Pro', Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Style images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive media queries */
+@media screen and (max-width: 767px) {
+  /* Reduce font size for small screens */
+  html {
+    font-size: 14px;
+  }
+
+  /* Center smaller container */
+  .container {
+    max-width: 100%;
+  }
+
+  /* Make headings slightly smaller */
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  /* Make paragraphs slightly smaller */
+  p {
+    font-size: 0.9rem;
+  }
 }
