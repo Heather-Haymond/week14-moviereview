@@ -1,26 +1,75 @@
-import React, { useState } from "react";
-import "../index"; // import the CSS file
+import React, { useState } from 'react';
+import './stars.css'; // import CSS file
+import { rating } from './Movie';
+function Stars() {
+  const [checked, setChecked] = useState(Array(5).fill(false)); // initialize state with an array of 5 false values
 
-function Stars(props) {
-  const [rating, setRating] = useState(0);
-
-  const handleClick = (event) => {
-    const value = parseInt(event.target.value);
-    setRating(value);
+  const handleCheckboxChange = (index) => {
+    const newChecked = [...checked]; // create a copy of the checked array
+    var newVal = !newChecked[index];
+    if (newVal === false) {
+      for (let i = 0; i <= 5; i++) {
+        newChecked[i] = newVal; // toggle the checkbox at the specified index
+      }
+    }
+    else {
+      for (let i = 0; i <= index; i++) {
+      //console.log(i);
+    
+    
+       newChecked[i] = newVal; // toggle the checkbox at the specified index
+      }
+    }
+    rating = 0;
+    for (let i = 0; i <= index; i++) {
+      if (newChecked[i] === true)
+        rating = rating + 1; 
+    }
+    setChecked(newChecked); // update the state
   };
 
   return (
-    <div className="star-rating">
-      <input type="radio" id="star-1" name="rating" value="1" checked={rating >= 1} onChange={handleClick} />
-      <label className="star" htmlFor="star-1"></label>
-      <input type="radio" id="star-2" name="rating" value="2" checked={rating >= 2} onChange={handleClick} />
-      <label className="star" htmlFor="star-2"></label>
-      <input type="radio" id="star-3" name="rating" value="3" checked={rating >= 3} onChange={handleClick} />
-      <label className="star" htmlFor="star-3"></label>
-      <input type="radio" id="star-4" name="rating" value="4" checked={rating >= 4} onChange={handleClick} />
-      <label className="star" htmlFor="star-4"></label>
-      <input type="radio" id="star-5" name="rating" value="5" checked={rating >= 5} onChange={handleClick} />
-      <label className="star" htmlFor="star-5"></label>
+    <div className="star-checkboxes">
+     <label key= 'star1' className={checked[0] ? 'star-checked' : 'star-unchecked'}>
+          <input
+            type="checkbox"
+            checked={checked[0]}
+            onChange={() => handleCheckboxChange(0)}
+          />
+          ★
+        </label>
+        <label key={'star2'} className={checked[1] ? 'star-checked' : 'star-unchecked'}>
+          <input
+            type="checkbox"
+            checked={checked[1]}
+            onChange={() => handleCheckboxChange(1)}
+          />
+          ★
+        </label>
+        <label key={'star3'} className={checked[2] ? 'star-checked' : 'star-unchecked'}>
+          <input
+            type="checkbox"
+            checked={checked[2]}
+            onChange={() => handleCheckboxChange(2)}
+          />
+          ★
+        </label>
+        <label key={'star4'} className={checked[3] ? 'star-checked' : 'star-unchecked'}>
+          <input
+            type="checkbox"
+            checked={checked[3]}
+            onChange={() => handleCheckboxChange(3)}
+          />
+          ★
+        </label>
+        <label key={'star5'} className={checked[4] ? 'star-checked' : 'star-unchecked'}>
+          <input
+            type="checkbox"
+            checked={checked[4]}
+            onChange={() => handleCheckboxChange(4)}
+          />
+          ★
+        </label>
     </div>
   );
 }
