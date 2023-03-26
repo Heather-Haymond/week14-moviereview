@@ -1,9 +1,9 @@
 import React from 'react';
 import MovieList from './components/MovieList'; // Import the MovieList component
 import ReactDOM from 'react-dom';
-import Apps from './Apps'; // Add components/ to the import path
-
-ReactDOM.render(<Apps />, document.getElementById('root'));
+//import Apps from './Apps'; // Add components/ to the import path
+import './index.css';
+//ReactDOM.render(<Apps />, document.getElementById('root'));
 
 
 // Define an array of movie objects with id, title, synopsis, rating, and reviews properties
@@ -46,9 +46,11 @@ const movies = [
 
 // Define App component as a function that renders a MovieList component with the movies array as a prop
 const App = () => {
+    //console.log('inside app');
+    //alert('please work')
   return (
-    <div>
-        <h2> blah </h2>
+    <div className='Movies'>
+    
       <MovieList movies={movies} />
     </div>
   );
