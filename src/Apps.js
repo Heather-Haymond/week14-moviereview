@@ -50,7 +50,7 @@ const App = () => {
     //alert('please work')
   return (
     <div className='Movies'>
-    
+    {/* call movie and will pass the movies list as an object */}
       <MovieList movies={movies} />
     </div>
   );

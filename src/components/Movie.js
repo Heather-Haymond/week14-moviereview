@@ -21,7 +21,7 @@ const Movie = ({ movie }) => {
       <Stars rating={movie.rating} />
       <ReviewList reviews={reviews} />
       
-      <ReviewForm addReview={addReview} />
+      <ReviewForm addReview={addReview} reviews={reviews} />
       <h2>{displayText} </h2>
     </div>
   );

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { displayText } from './Movie';
 // Define ReviewForm component as a function that takes onReviewSubmit prop
-const ReviewForm = ({ onReviewSubmit }) => {
+const ReviewForm =  props  => {
   // Use useState hook to declare reviewText state variable and setReviewText function
   const [reviewText, setReviewText] = useState('');
   
@@ -11,8 +11,10 @@ const ReviewForm = ({ onReviewSubmit }) => {
     
     const temp = displayText + reviewText;
     //alert(temp);
-    displayText = temp;
-    ;
+   // displayText = temp;
+   
+    props.reviews.push({ id: 3, text: temp });
+    //alert(props.reviews[2].text);
     // event.preventDefault(); // Prevent default form submission behavior
     // onReviewSubmit(reviewText); // Call the onReviewSubmit prop function with the review text
     // setReviewText(''); // Reset the review text state

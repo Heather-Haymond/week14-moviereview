@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import './stars.css'; // import CSS file
-import { rating } from './Movie';
-function Stars() {
+//import { rating } from './Movie';
+const Stars = props =>  {
   const [checked, setChecked] = useState(Array(5).fill(false)); // initialize state with an array of 5 false values
-
+//alert(props.rating);
   const handleCheckboxChange = (index) => {
     const newChecked = [...checked]; // create a copy of the checked array
     var newVal = !newChecked[index];
@@ -20,11 +20,12 @@ function Stars() {
        newChecked[i] = newVal; // toggle the checkbox at the specified index
       }
     }
-    rating = 0;
+    var ratingT = 0;
     for (let i = 0; i <= index; i++) {
       if (newChecked[i] === true)
-        rating = rating + 1; 
+        ratingT = ratingT + 1; 
     }
+    //props.rating = ratingT;
     setChecked(newChecked); // update the state
   };
 
