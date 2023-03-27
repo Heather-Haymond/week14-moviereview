@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-// Define ReviewForm component as a function that takes onReviewSubmit prop
 import Stars from "./Stars";
- // Import the Stars component
+ // Define ReviewForm component as a function that takes onReviewSubmit prop
 const ReviewForm = ({ addReview }) => {
   // Use useState hook to declare reviewText state variable and setReviewText function
   const [reviewText, setReviewText] = useState("");
@@ -12,7 +11,7 @@ const ReviewForm = ({ addReview }) => {
     // Prevent the default behavior of the form submit event
     event.preventDefault();
     // Call the addReview prop function and pass the reviewText state variable as an argument
-    addReview({ text: reviewText, rating: 0 });
+    addReview({ text: reviewText, rating: rating });
     // Clears the review text state variable
     setReviewText("");
     setRating(0); // Reset the rating state variable after submission
