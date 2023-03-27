@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './stars.css'; // import CSS file
 //import { rating } from './Movie';
-const Stars = props =>  {
+const Stars = ({ rating, setRating }) =>  {
   const [checked, setChecked] = useState(Array(5).fill(false)); // initialize state with an array of 5 false values
 //alert(props.rating);
   const handleCheckboxChange = (index) => {
@@ -15,8 +15,6 @@ const Stars = props =>  {
     else {
       for (let i = 0; i <= index; i++) {
       //console.log(i);
-    
-    
        newChecked[i] = newVal; // toggle the checkbox at the specified index
       }
     }
@@ -25,7 +23,8 @@ const Stars = props =>  {
       if (newChecked[i] === true)
         ratingT = ratingT + 1; 
     }
-    //props.rating = ratingT;
+    
+    setRating(ratingT); // update the rating state variable
     setChecked(newChecked); // update the state
   };
 

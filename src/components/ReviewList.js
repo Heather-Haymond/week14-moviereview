@@ -1,12 +1,18 @@
-import React from 'react';
-import Review from './Review';
+import React from "react";
+import Review from "./Review";
 
 const ReviewList = ({ reviews }) => {
+  console.log("reviews:", reviews);
   return (
     <div>
-      {reviews.map((review) => (
-        <Review key={review.id} review={review} />
-      ))}
+      {reviews.map(
+        (
+          review,
+          index //map can take index as a second parameter, this is useful for the key property on the Review component below
+        ) => (
+          <Review key={index} review={review} />
+        )
+      )}
     </div>
   );
 };
