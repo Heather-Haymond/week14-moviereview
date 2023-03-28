@@ -2,6 +2,7 @@ import React from 'react';
 import Movie from './Movie';
 
 const MovieList = props => {
+  console.log(props)
   // alert(props.movies[0].title);
   return (
     <div>
