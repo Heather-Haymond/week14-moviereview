@@ -8,7 +8,7 @@ export const rating = 0;
 const Movie = ({ movie }) => {
 // Logs properties first to see if what objects, functions, etc.. are able to be accessed
   console.log("movie properties:", movie);
-  const [reviews, setReviews] = useState(movie.reviews || []);
+
   movie.rating = rating;
 
   const addReview = (review) => {
